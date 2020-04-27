@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+   encrypt:
+     build: .
+     command: python encrypt.py
+     volumes:
+       - '.:/user/src/app'
+
+
+
+
+   decrypt:
+     depends_on:
+        - encrypt
+     command: python decrypt.py
+     build:
+      context: .
+      dockerfile: Dockerfile.web
+     volumes:
+      - '.:/user/src/app'
