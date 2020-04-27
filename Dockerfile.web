@@ -1,8 +1,5 @@
 FROM python:3
 
-ENTRYPOINT ["/user/src/app/enoutput.xml.aes"]
-ADD decrypt.py /
-
 WORKDIR /user/src/app
 
 COPY . .
